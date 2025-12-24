@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dark Todo App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="todo-app">
+        <h1>🌙 Dark Todo</h1>
+
+        <div class="input-box">
+            <form onsubmit="createTodoItem(event)">
+                <input type="text" placeholder="Add your task...">
+                <button type="submit">Add</button>
+            </form>
+        </div>
+
+        <ul class="todo-list">
+            <li>
+                <span>Learn Web Development</span>
+                <button class="delete">✖</button>
+            </li>
+            <li>
+                <span>Create Dark UI Projects</span>
+                <button class="delete">✖</button>
+            </li>
+        </ul>
+    </div>
+<script src="script.js"></script>
+</body>
+
+</html>
