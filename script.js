@@ -12,13 +12,28 @@ function createTodoItem(event) {
     }
 
     arr.unshift(input);
-    let html = '';
 
-    for (let i = 0; i < arr.length; i++) {
-        html += `<li>${arr[i]}</li>`;
-    }
+    // Create li element
+    let li = document.createElement('li');
 
-    document.querySelector('.todo-list').innerHTML = html;
+    // Add span for task text
+    let span = document.createElement('span');
+    span.textContent = input;
+    li.appendChild(span);  // ✅ correct
 
+    // Add cancel button
+    let btn = document.createElement('button');
+    btn.innerText = '✖';
+    btn.className = 'delete';
+    btn.onclick = function() {
+        li.remove();
+    };
+    li.appendChild(btn);
+
+    // Add li to top of the list
+    let todo = document.getElementById('todo-list');
+    todo.prepend(li);  // ✅ correct
+
+    // Clear input
     inputField.value = '';
 }
